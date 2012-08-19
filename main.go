@@ -12,6 +12,8 @@ var path = flag.String("path", ".", "path of the static files to serve")
 var noCache = flag.Bool("noCache", true, "sends the Cache-Control headers to the client to prevent caching")
 
 func main() {
+  flag.Parse()
+
   absPath, err := filepath.Abs(*path)
 
   if err != nil {
